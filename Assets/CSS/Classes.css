@@ -1,0 +1,67 @@
+.main-bg {
+    background-image: url('../IMG/endless-constellation.svg');
+    background-size: cover;
+    background-position: center center;
+    /*Com o 'size' e o 'position' a imagem se ajusta a tela*/
+    color: var(--white-color);
+}
+
+.white-bg {
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+
+.main-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 8rem var(--gap);
+}
+
+.section {
+    min-height: 100vh;
+}
+
+.menu-spacing{
+    height: 6.4rem;
+}
+
+.grid{
+    display: grid ;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter;
+    /* Aqui é um contador */
+    text-align: justify;
+}
+
+.grid-main-heading{
+    margin-bottom: 1rem;
+}
+
+.grid-description{
+    padding-bottom: 1rem;
+}
+
+.grid h3{
+    font-size: 3rem;
+    position: relative; /* Adicionado para segurar o contador em relação ao h3 */
+    padding-left: 5rem;
+    padding-bottom: 2rem;
+}
+
+.grid h3::before {
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    /* Contador adicionado na class 'grid', depois adicionado o incremento e também especificado o conteúdo a ser contado. */
+    position: absolute;
+    font-size: 6rem;
+    font-style: italic;
+    top: -2rem;
+    left: -1rem;
+    transform: rotate(5deg);
+}
+
+body .full-width{
+    width: 100%;
+    flex: 1 1 100%;
+}
